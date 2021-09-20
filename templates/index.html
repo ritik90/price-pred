@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <link rel="stylesheet" href="C:\Users\vijan\Desktop\Deployment-flask-master\static\css\style.css">
+
+  <style>
+.register-wrapper{
+background-image:linear-gradient(135deg , #047e2a 30%, #950 30%);
+position: relative;
+z-index: 3;
+padding: 100px;
+color: #999
+}
+.register-wrapper *{
+    box-sizing: border-box;
+}
+.register-wrapper form input{
+    display:inline-block;
+    width:  100%;
+    line-height: 40px;
+    height: 20px;
+    background: white;
+    border: solid 1px rgb(20, 198, 243);
+    border-bottom-width: 3px0;
+    border-radius: 5px;
+}
+
+.register-wrapper form input:not(:last-child){
+    margin-bottom: 20px;
+}
+.register-wrapper form input[type="text"]:focus
+.register-wrapper form input[type="text"]:active
+.register-wrapper form input[type="number"]:focus
+.register-wrapper form input[type="number"]:active
+.register-wrapper form input[type="email"]:focus
+.register-wrapper form input[type="email"]:active
+{
+    border-color: #ccc;
+}
+
+
+
+.register-title{
+    font-size: 2rem;
+    padding-bottom: 20px;
+    margin: 0 0 20px;
+    border-bottom: dashed 1px #e6e6e6;
+}
+.register-block{
+
+    justify-content: center;
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+
+}
+</style>
+</head>
+<body>
+      <div class="register-wrapper">
+        <h1>Salary Predictor</h1>
+        <div class="register-block">
+          <h2 class="register-title">Enter Details</h2>
+          <form action="{{ url_for('predict')}}"method="post">
+            <input type="text" name="experience" placeholder="internships" required="required" />
+              <input type="text" name="test_score" placeholder="credability-score" required="required" />
+               <input type="text" name="interview_score" placeholder="experiance" required="required" />
+        <button type="submit" value="submit">Predict</button>
+          </form>
+    
+      
+        </div>
+      </div>
+  
+     <br>
+     <br>
+     {{ prediction_text }}
+  
+   </div>
+</body>
+</html>
