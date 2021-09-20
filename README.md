@@ -1,3 +1,4 @@
 # Salary-Prediction
 
-creating simple ml models and then deploying using flask.
+1. Creating simple ML model of Regression in which Simple Linear Regression is used.
+2. Deploying the model flask.
